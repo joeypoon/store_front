@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
+  mount Payola::Engine => '/payola', as: :payola
+
   root 'products#index'
 
   get 'products/new' => 'products#new', as: :new_product
+
+  get 'thanks' => 'products#thanks'
 
   post 'products' => 'products#create'
 

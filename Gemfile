@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'payola-payments'
 gem 'faker'
 gem 'simple_form'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
