@@ -1,0 +1,11 @@
+<% if @product.errors.none? %>
+
+  $('#myModal').modal('hide');
+  <% @products = Product.all.order('created_at desc') %>
+  $('#content').html('<%= j render partial: 'products/product_list', locals: { products: @products } %>')
+
+<% else %>
+
+  $('#myModal .modal-body').html('<%= j render 'products/new_product_form' %>')
+
+<% end %>

@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
+  get 'products/new' => 'products#new', as: :new_product
+
+  post 'products' => 'products#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

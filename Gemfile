@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'payola-payments'
 gem 'faker'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
