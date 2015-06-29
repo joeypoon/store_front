@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new product_params
+    @product.price *= 100
     if @product.save
       flash.now[:notice] = 'Success'
     else
@@ -27,15 +28,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :price, :permalink)
     end
-
-    # Payola seems to bypass price method and gets cents
-    # def price(cents)
-    #   cents / 100.0
-    # end
-    #
-    # def price=(dollars)
-    #   dollars * 100
-    # end
 
     def set_products
       @products = Product.all.order('created_at desc limit 7')
